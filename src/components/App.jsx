@@ -49,9 +49,9 @@ const App = () => {
         {totalFeedback > 0 ? <Statistics
           good={good}
           neutral={neutral}
-            bad={bad}
+          bad={bad}
           total={totalFeedback}
-            positiveFeedbacks={positiveFeedbacks}
+          positiveFeedbacks={positiveFeedbacks}
           /> :
           (
             <Notification message="There is no feedback yet." />
