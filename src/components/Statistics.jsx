@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const Statistics = ({ good, neutral, bad, total, positiveFeedbacks }) => {
+const Statistics = ({ good, neutral, bad }) => {
+    const total = good + neutral + bad;
+    const positiveFeedbacks = total ? Math.round((good / total) * 100) : 0;
+
     return (
         <div>
             <p>Good : {good}</p>
@@ -17,8 +20,6 @@ Statistics.propTypes = {
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,
-    total: PropTypes.number.isRequired,
-    positiveFeedbacks: PropTypes.number.isRequired,
 }
 
 export default Statistics;
